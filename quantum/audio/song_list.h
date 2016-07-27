@@ -4,11 +4,12 @@
 #define SONG_LIST_H
 
 
+#define ZELDA_ITEM                                             \
+    Q__NOTE(_A4), Q__NOTE(_AS4), Q__NOTE(_B4), W__NOTE(_C5),
+
 #define ZELDA_SECRET                                        \
-    Q__NOTE(_E4), Q__NOTE(_E4), Q__NOTE(_F4), Q__NOTE(_G4), \
-    Q__NOTE(_G4), Q__NOTE(_F4), Q__NOTE(_E4), Q__NOTE(_D4), \
-    Q__NOTE(_C4), Q__NOTE(_C4), Q__NOTE(_D4), Q__NOTE(_E4), \
-    QD_NOTE(_E4), E__NOTE(_D4), H__NOTE(_D4),
+    Q__NOTE(_G4), Q__NOTE(_FS4), Q__NOTE(_DS4), Q__NOTE(_A4), \
+    Q__NOTE(_GS4), Q__NOTE(_E4), Q__NOTE(_GS4), Q__NOTE(_C4),
 
 #define ODE_TO_JOY                                          \
     Q__NOTE(_E4), Q__NOTE(_E4), Q__NOTE(_F4), Q__NOTE(_G4), \
