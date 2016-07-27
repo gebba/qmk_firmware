@@ -8,8 +8,8 @@
     Q__NOTE(_A4), Q__NOTE(_AS4), Q__NOTE(_B4), W__NOTE(_C5),
 
 #define ZELDA_SECRET                                        \
-    Q__NOTE(_G4), Q__NOTE(_FS4), Q__NOTE(_DS4), Q__NOTE(_A4), \
-    Q__NOTE(_GS4), Q__NOTE(_E4), Q__NOTE(_GS4), Q__NOTE(_C4),
+    Q__NOTE(_G5), Q__NOTE(_FS5), Q__NOTE(_DS4), Q__NOTE(_A3), \
+    Q__NOTE(_GS3), Q__NOTE(_E4), Q__NOTE(_GS5), Q__NOTE(_C6),
 
 #define ODE_TO_JOY                                          \
     Q__NOTE(_E4), Q__NOTE(_E4), Q__NOTE(_F4), Q__NOTE(_G4), \
