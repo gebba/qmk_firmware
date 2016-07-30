@@ -18,6 +18,7 @@ extern keymap_config_t keymap_config;
 #define _LOWER 1
 #define _RAISE 2
 #define _NUMPAD 3
+#define _DF 4
 #define _ADJUST 16
 
 enum planck_keycodes {
@@ -25,6 +26,7 @@ enum planck_keycodes {
   LOWER,
   RAISE,
   NUMPAD,
+  DF,
   SECRET
 };
 
@@ -106,6 +108,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {_______, _______, _______, _______, _______, _______, _______, _______, KC_P0,   _______, _______, _______}
 },
 
+/* Dwarf Fortress
+ * ,-------------------------------------------------------------------------------------------.
+ * | Tab  |  Q   |  W   |    E    |   R   |   T   |   Y   |   U   | Num7 | Num8 | Num9 | Num-  |      
+ * |------+------+------+---------+-------+-------+-------+-------+------+------+------+-------|
+ * | Esc  |  A   |  S   |    D    |   F   |   G   |   H   |   J   | Num4 | Num5 | Num6 | Num+  |
+ * |------+------+------+---------+-------+-------|-------+-------+------+------+------+-------|
+ * |Shift |  Z   |  X   |    C    |   V   |   B   |   N   |   M   | Num1 | Num2 | Num3 | Enter |
+ * |------+------+------+---------+-------+-------+-------+-------+------+------+------+-------|
+ * | Ctrl | Alt  | GUI  | XXXXXXX | Lower | Space | Space | Raise | Left | Down |  Up  | Right |
+ * `-------------------------------------------------------------------------------------------'
+ */
+[_DF] = {
+  {KC_TAB,  KC_Q,    KC_W,    KC_E,   KC_R, KC_T,   KC_Y,   KC_U,  KC_P7,   KC_P8,   KC_P9, KC_PMNS},
+  {KC_ESC,  KC_A,    KC_S,    KC_D,   KC_F, KC_G,   KC_H,   KC_J,  KC_P4,   KC_P5,   KC_P6, KC_PPLS},
+  {KC_LSFT, KC_Z,    KC_X,    KC_C,   KC_V, KC_B,   KC_N,   KC_M,  KC_P1,   KC_P2,   KC_P3, KC_PENT},
+  {KC_LCTL, KC_LALT, KC_LGUI, NUMPAD, LOWER,KC_SPC, KC_SPC, RAISE, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT}
+},
+
 /* Adjust (Lower + Raise)
  * ,-----------------------------------------------------------------------------------.
  * |      | Reset|      |      |      |Qwerty|      |Secret|      |      |      |  Del |
@@ -118,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] = {
-  {_______, RESET,   _______, _______, _______, QWERTY,  _______,  SECRET,  _______, _______, _______, KC_DEL},
+  {_______, RESET,   _______, _______, _______, QWERTY,  DF,      SECRET,  _______, _______, _______, KC_DEL},
   {_______, _______, _______, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______, _______, _______, _______, _______},
   {_______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______},
   {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
@@ -129,7 +149,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #ifdef AUDIO_ENABLE
 
-float tone_qwerty[][2]     = SONG(QWERTY_SOUND);
+float tone_qwerty[][2]      = SONG(QWERTY_SOUND);
+float tone_df[][2]          = SONG(DF_SONG);
 float tone_zelda_item[][2] = SONG(ZELDA_ITEM);
 float tone_zelda_secret[][2] = SONG(ZELDA_SECRET);
 float music_scale[][2]     = SONG(MUSIC_SCALE_SOUND);
@@ -181,6 +202,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       } else {
         layer_off(_NUMPAD);
         update_tri_layer(_LOWER, _RAISE, _ADJUST);
+      }
+      return false;
+      break;
+    case DF:
+      if (record->event.pressed) {
+        #ifdef AUDIO_ENABLE
+          PLAY_NOTE_ARRAY(tone_df, false, 0);
+        #endif
+        persistant_default_layer_set(1UL<<_DF);
       }
       return false;
       break;

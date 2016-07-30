@@ -3,6 +3,15 @@
 #ifndef SONG_LIST_H
 #define SONG_LIST_H
 
+#define DF_SONG                                                 \
+    Q__NOTE(_CS2), Q__NOTE(_FS3), Q__NOTE(_F3), Q__NOTE(_A2),   \
+    Q__NOTE(_GS2), Q__NOTE(_A2), Q__NOTE(_F3), Q__NOTE(_FS3),   \
+    Q__NOTE(_CS2), Q__NOTE(_FS3), Q__NOTE(_F3), Q__NOTE(_A2),   \
+    Q__NOTE(_GS2), Q__NOTE(_A2), Q__NOTE(_F3), Q__NOTE(_FS3),   \
+    Q__NOTE(_B1), Q__NOTE(_FS3), Q__NOTE(_E3), Q__NOTE(_B2),   \
+    Q__NOTE(_FS2), Q__NOTE(_B2), Q__NOTE(_E3), Q__NOTE(_FS3),   \
+    Q__NOTE(_B1), Q__NOTE(_FS3), Q__NOTE(_E3), Q__NOTE(_B2),   \
+    Q__NOTE(_FS2), Q__NOTE(_B2), Q__NOTE(_E3), Q__NOTE(_FS3),   \
 
 #define ZELDA_ITEM                                             \
     Q__NOTE(_A4), Q__NOTE(_AS4), Q__NOTE(_B4), W__NOTE(_C5),
