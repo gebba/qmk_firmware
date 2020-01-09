@@ -37,43 +37,7 @@
     Q__NOTE(_G5), Q__NOTE(_FS5), Q__NOTE(_DS4), Q__NOTE(_A3), \
     Q__NOTE(_GS3), Q__NOTE(_E4), Q__NOTE(_GS5), Q__NOTE(_C6),
 
-#define COIN_SOUND \
-    E__NOTE(_A5  ),\
-    HD_NOTE(_E6  ),
-
 #define NO_SOUND
-
-#define LP_NUMB	\
-	H__NOTE(_CS5), H__NOTE(_E5), H__NOTE(_CS5), WD_NOTE(_FS5), \
-	WD_NOTE(_A5), WD_NOTE(_GS5),   WD_NOTE(_REST),  H__NOTE(_CS5), H__NOTE(_E5), \
-	H__NOTE(_CS5), WD_NOTE(_A5), WD_NOTE(_GS5), WD_NOTE(_E5),
-
-#define CLOSE_ENCOUNTERS_5_NOTE  \
-	Q__NOTE(_D5),                \
-	Q__NOTE(_E5),                \
-	Q__NOTE(_C5),                \
-	Q__NOTE(_C4),                \
-	Q__NOTE(_G4),
-
-#define DOE_A_DEER              \
-	QD_NOTE(_C4), E__NOTE(_D4), \
-	QD_NOTE(_E4), E__NOTE(_C4), \
-	Q__NOTE(_E4), Q__NOTE(_C4), \
-	Q__NOTE(_E4),
-
-/* Requires: PLAY_NOTE_ARRAY(..., ..., STACCATO); */
-#define IN_LIKE_FLINT \
-    E__NOTE(_AS4), E__NOTE(_AS4), QD_NOTE(_B4),  \
-    E__NOTE(_AS4), E__NOTE(_B4),  QD_NOTE(_CS4), \
-    E__NOTE(_B4),  E__NOTE(_CS4), QD_NOTE(_DS4), \
-    E__NOTE(_CS4), E__NOTE(_B4),  QD_NOTE(_AS4), \
-    E__NOTE(_AS4), E__NOTE(_AS4), QD_NOTE(_B4),
-
-#define IMPERIAL_MARCH \
-  HD_NOTE(_A4), HD_NOTE(_A4), HD_NOTE(_A4), QD_NOTE(_F4), QD_NOTE(_C5), \
-  HD_NOTE(_A4), QD_NOTE(_F4),  QD_NOTE(_C5), WD_NOTE(_A4), \
-  HD_NOTE(_E5), HD_NOTE(_E5), HD_NOTE(_E5), QD_NOTE(_F5), QD_NOTE(_C5), \
-  HD_NOTE(_A4), QD_NOTE(_F4),  QD_NOTE(_C5), WD_NOTE(_A4)
 
 #define CLUEBOARD_SOUND \
     HD_NOTE(_C3), HD_NOTE(_D3), HD_NOTE(_E3), HD_NOTE(_F3), HD_NOTE(_G3), HD_NOTE(_A4), HD_NOTE(_B4), HD_NOTE(_C4)
@@ -196,12 +160,7 @@
  *   proof of permission to use them, or public domain status.
  */
 
-#define CLOSE_ENCOUNTERS_5_NOTE
-#define DOE_A_DEER
-#define IN_LIKE_FLINT
-#define IMPERIAL_MARCH
 #define BASKET_CASE
-#define COIN_SOUND
 #define ONE_UP_SOUND
 #define SONIC_RING
 #define ZELDA_PUZZLE
@@ -236,4 +195,3 @@
 #define TERRAS_THEME
 #define RENAI_CIRCULATION
 #define PLATINUM_DISCO
-#define LP_NUMB
